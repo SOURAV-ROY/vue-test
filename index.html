@@ -38,9 +38,13 @@
 <hr>
 <div id="show">
     <h1 v-if='show'>Show the message</h1>
+    <h1 v-else='show'>Now You see me</h1>
+    <template v-if="show">
+    <h3>Inside a template</h3>
+    </template>
     <h2>Do You show the message??</h2>
     <button @click="show = !show">Switch</button>
-</div>
+</>
 
 <script type="text/javascript" src="js/vue.js"></script>
 <script type="text/javascript" src="app.js"></script>
