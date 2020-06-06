@@ -19,7 +19,7 @@
     <button v-on:click="increase">Increase</button>
     <button v-on:click="decrease">Decrease</button>
 </div>
-
+<hr>
 <div id="box">
     <div
             class="demo"
@@ -29,10 +29,17 @@
     <div class="demo" :class="{red: attachRed}"></div>
     <div class="demo" :style="{backgroundColor: color}"></div>
     <div class="demo" :style="myStyle"></div>
+    <div class="demo" :style="[myStyle, {height: width + 'px'}]"></div>
     <div class="demo" :class="[color, {red: attachRed}]"></div>
     <hr>
     <input type="text" v-model="color">
     <input type="text" v-model="width">
+</div>
+<hr>
+<div id="show">
+    <h1 v-if='show'>Show the message</h1>
+    <h2>Do You show the message??</h2>
+    <button @click="show = !show">Switch</button>
 </div>
 
 <script type="text/javascript" src="js/vue.js"></script>

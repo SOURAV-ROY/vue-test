@@ -47,3 +47,10 @@ var box = new Vue({
         }
     },
 });
+
+new Vue({
+    el:'#show',
+    data:{
+        show: true
+    }
+})
