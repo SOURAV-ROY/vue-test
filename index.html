@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Vue Test</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>Vue Test</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<h1>Vue Start</h1>
+<h1>Vue Start</h1>
 
 <div id="app">
-  {{ message }}
+    {{ message }}
 </div>
 <hr>
 
 <div id="counter">
-	<h1>{{message}}</h1>
-	<h2>Counter: {{counter}}</h2>
-	<h3>Result : {{result}}</h3>
-	<button v-on:click="increase">Increase</button>
-	<button v-on:click="decrease">Decrease</button>
+    <h1>{{message}}</h1>
+    <h2>Counter: {{counter}}</h2>
+    <h3>Result : {{result}}</h3>
+    <button v-on:click="increase">Increase</button>
+    <button v-on:click="decrease">Decrease</button>
 </div>
 
 <div id="box">
-	<div 
-		class="demo"
-		@click="attachRed = !attachRed"
-		:class="divClasses"
-	></div>
-	<div class="demo" :class="{red: attachRed}"></div>
-	<div class="demo" :class="[color, {red: attachRed}]"></div>
-<hr>
-	<input type="text" v-model="color">
+    <div
+            class="demo"
+            @click="attachRed = !attachRed"
+            :class="divClasses"
+    ></div>
+    <div class="demo" :class="{red: attachRed}"></div>
+    <div class="demo" :class="[color, {red: attachRed}]"></div>
+    <hr>
+    <input type="text" v-model="color">
 </div>
 
 <script type="text/javascript" src="js/vue.js"></script>
