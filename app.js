@@ -54,3 +54,10 @@ new Vue({
         show: true
     }
 })
+
+new Vue({
+    el:'#list',
+    data:{
+        ingredients: ['Potato','Tomato','Onion']
+    }
+})
