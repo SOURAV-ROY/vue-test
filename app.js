@@ -58,6 +58,13 @@ new Vue({
 new Vue({
     el:'#list',
     data:{
-        ingredients: ['Potato','Tomato','Onion']
+        ingredients: ['Potato','Tomato','Onion'],
+
+        persons: [
+            {name: 'Sourav', age: 24, color: 'red'},
+            {name: 'Roy', age: 22, color: 'black'},
+            {name: 'BMW', age: 23, color: 'blue'},
+            {name: 'Bugatti', age: 21, color: 'pink'}
+        ]
     }
 })

@@ -53,6 +53,12 @@
     <h1>LIST</h1>
     <li v-for="(ingredient, i) in ingredients">{{ingredient}} ({{i}})</li>
 </ol>
+<hr>
+<ul v-for="person in persons">
+    <div v-for="(all, key, index) in person">
+        {{key}}: {{ all }} ({{index}})
+    </div>
+</ul>
 </div>
 
 <script type="text/javascript" src="js/vue.js"></script>
