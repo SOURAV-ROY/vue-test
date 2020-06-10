@@ -12,37 +12,36 @@ new Vue({
                 this.playerHealth = 100,
                 this.monsterHealth = 100
         },
-        attack: function () {
-            this.monsterHealth -= this.calculateDamage(5, 12);
-            // this.monsterHealth -= damage;
 
-            if(this.checkWin()){
+        attack: function () {
+            this.monsterHealth -= this.calculateDamage(3, 10);
+            if (this.checkWin()) {
                 return;
             }
-
-            // if (this.monsterHealth <= 0) {
-            //     alert("You Win !!!");
-            //     this.gameIsRunning = false;
-            //     return;
-            // }
-
-            this.playerHealth -= this.calculateDamage(3, 10);
-            this.playerHealth -= damage;
-            this.checkWin();
-
-            // if (this.playerHealth <= 0) {
-            //     alert("You Los !!!");
-            //     this.gameIsRunning = false;
-            // }
+            this.monsterAttacks();
+            // this.playerHealth -= this.calculateDamage(5, 12);
+            // this.checkWin();
         },
-        specialAttack: function () {
 
+        specialAttack: function () {
+            this.monsterHealth -= this.calculateDamage(10, 20);
+            if (this.checkWin()) {
+                return;
+            }
+            this.monsterAttacks();
+            // this.playerHealth -= this.calculateDamage(5, 12);
+            // this.checkWin();
         },
         heal: function () {
 
         },
         giveUp: function () {
 
+        },
+        
+        monsterAttacks: function () {
+            this.playerHealth -= this.calculateDamage(5, 12);
+            this.checkWin();
         },
 
         calculateDamage: function (min, max) {
@@ -51,14 +50,14 @@ new Vue({
 
         checkWin: function () {
             if (this.monsterHealth <= 0) {
-                if (confirm('You Won !! New Game Start :>')) {
+                if (confirm('You Won !! New Game Start 💚')) {
                     this.startGame();
                 } else {
                     this.gameIsRunning = false;
                 }
                 return true;
             } else if (this.playerHealth <= 0) {
-                if (confirm('You Lost !! New Game Start :>')) {
+                if (confirm('You Lost !! New Game Start 😜')) {
                     this.startGame();
                 } else {
                     this.gameIsRunning = false;
