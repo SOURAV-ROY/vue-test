@@ -4,7 +4,8 @@ new Vue({
         name: "Sourav",
         playerHealth: 100,
         monsterHealth: 100,
-        gameIsRunning: false
+        gameIsRunning: false,
+        truns: []
     },
     methods: {
         startGame: function () {
@@ -14,7 +15,12 @@ new Vue({
         },
 
         attack: function () {
-            this.monsterHealth -= this.calculateDamage(3, 10);
+            var damage = this.calculateDamage(3, 10);
+            this.monsterHealth -= damage;
+            this.truns.unshift({
+                isPlayer: true,
+                text: 'Player Hit Monster For ' + damage
+            })
             if (this.checkWin()) {
                 return;
             }
@@ -45,8 +51,13 @@ new Vue({
         },
 
         monsterAttacks: function () {
-            this.playerHealth -= this.calculateDamage(5, 12);
+            var damage = this.calculateDamage(5, 12);
+            this.playerHealth -= damage;
             this.checkWin();
+            this.truns.unshift({
+                isPlayer: false,
+                text: 'Monster Hit Player For ' + damage
+            })
         },
 
         calculateDamage: function (min, max) {
