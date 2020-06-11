@@ -50,10 +50,13 @@
                 <button id="give-up" @click="giveUp">GIVE UP</button>
             </div>
         </section>
-        <section class="row log">
+        <section class="row log" v-if="truns.length > 0">
             <div class="small-12 columns">
                 <ul>
-                    <li v-for='turn in truns'>
+                    <li 
+                    v-for="turn in truns"
+                    :class="{'player-turn': turn.isPlayer, 'monster-turn': !turn.isPlayer}"
+                    >
                         {{turn.text}}
                     </li>
                 </ul>
